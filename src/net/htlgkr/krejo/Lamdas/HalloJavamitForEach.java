@@ -7,7 +7,7 @@ public class HalloJavamitForEach {
 
     List<String> list = new ArrayList<>();{
     for (int i = 0; i < 10; i++) {
-        list.add("Hallo" + i);
+        list.add("Hallo" + i+1);
     }
     }
 
@@ -18,7 +18,10 @@ public class HalloJavamitForEach {
                 m.list) {
             System.out.println(s);
         }
+        System.out.println();
         m.list.forEach((String s) ->System.out.println(s));
+        System.out.println();
+        m.list.forEach(System.out::println);
 
 
 
