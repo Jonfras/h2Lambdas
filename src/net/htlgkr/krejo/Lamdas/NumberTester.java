@@ -8,8 +8,19 @@ public class NumberTester {
     NumberTest oddTester;
     NumberTest primeTester;
     NumberTest palindromeTester;
+    File file;
 
     public NumberTester(String fileName){
+        file = new File(fileName);
+    }
+
+    public void testFile(){
+        try {
+            Scanner s = new Scanner(file.getAbsoluteFile());
+            System.out.println();
+        } catch (FileNotFoundException e) {
+            System.out.println("Problem mit dem File");
+        }
 
     }
 
