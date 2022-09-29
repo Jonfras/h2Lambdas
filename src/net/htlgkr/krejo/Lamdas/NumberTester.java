@@ -1,5 +1,6 @@
 package net.htlgkr.krejo.Lamdas;
 
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -10,23 +11,11 @@ public class NumberTester {
     File file;
     final String DELIMITER = " ";
 
-    NumberTest oddTester = (z) -> {
-        System.out.println("nigg");
-        if (z % 2 == 0) return true;
-        return false;
-    };
+    NumberTest oddTester;
+    NumberTest primeTester;
+    NumberTest palindromeTester;
 
-    NumberTest primeTester = (z) -> {
-        System.out.println("Testing prime or no prime...");
-        if (z % 2 == 0) return true;
-        return false;
-    };
 
-    NumberTest palindromeTester = (z) -> {
-        System.out.println("Testing palindrome or no palindrome...");
-        if (z % 2 == 0) return true;
-        return false;
-    };
 
     public NumberTester(String fileName) {
         file = new File(fileName);
@@ -34,6 +23,7 @@ public class NumberTester {
 
     public void testFile() {
         try {
+            boolean b = false;
             Scanner s = new Scanner(file.getAbsoluteFile());
             System.out.println();
             int counter = Integer.parseInt(s.nextLine());
@@ -43,12 +33,20 @@ public class NumberTester {
                 int y = Integer.parseInt(arr[1]);
                 switch (x) {
                     case 1:
-                        System.out.println("Testing odd or even...");
-                        setOddEvenTester(oddTester);
+                        System.out.print("Testing odd or even...");
+                        b = oddTester.testNumber(y);
+                        System.out.println(b);
+                        break;
                     case 2:
-
+                        System.out.print("Testing prime or no prime...");
+                        b = primeTester.testNumber(y);
+                        System.out.println(b);
+                        break;
                     case 3:
-
+                        System.out.print("Testing palindrome or no palindrome...");
+                        b = palindromeTester.testNumber(y);
+                        System.out.println(b);
+                        break;
                 }
             }
         } catch (FileNotFoundException e) {
@@ -58,7 +56,7 @@ public class NumberTester {
 
 
     public void setOddEvenTester(NumberTest oddTester) {
-        oddTester.testNumber();
+        this.oddTester = oddTester;
     }
 
     public void setPrimeTester(NumberTest primeTester) {
