@@ -31,6 +31,10 @@ public class Main {
         CalculationOperation multiply = (Number a , Number b) -> new Number(a.getA() * b.getB(), a.getB() * b.getA());
         CalculationOperation divide = (Number a , Number b) -> new Number(a.getA() / b.getB(), a.getB() / b.getA());//check Skalarprodukt nicht ganz
 
+        CalculationOperation add1 = (n, m) -> new Number(n.getA() * m.getB() + m.getA() * n.getB(), n.getB() * m.getB());
+        CalculationOperation sub = (n, m) -> new Number(n.getA() * m.getB() - m.getA() * n.getB(), n.getB() * m.getB());
+        CalculationOperation mul = (n, m) -> new Number(n.getA() * m.getA(), n.getB() * m.getB());
+
 
 
 
