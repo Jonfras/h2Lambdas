@@ -13,7 +13,20 @@ public class Number {
         return a;
     }
 
+    public void setA(double a) {
+        this.a = a;
+    }
+
+    public void setB(double b) {
+        this.b = b;
+    }
+
     public double getB() {
         return b;
+    }
+
+    @Override
+    public String toString() {
+        return "Solution:{" + a + "/"+ b + "}";
     }
 }

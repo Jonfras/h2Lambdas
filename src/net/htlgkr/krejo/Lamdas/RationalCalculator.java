@@ -8,21 +8,23 @@ public class RationalCalculator extends AbstractCalculator {
 
     @Override
     public Number add(Number a, Number b) {
-        return null;
+        return super.add.calc(a,b);
+
     }
 
     @Override
     public Number subtract(Number a, Number b) {
-        return null;
+        return super.subtract.calc(a,b);
+
     }
 
     @Override
     public Number multiply(Number a, Number b) {
-        return null;
+        return super.multiply.calc(a,b);
     }
 
     @Override
     public Number divide(Number a, Number b) {
-        return null;
+        return super.divide.calc(a,b);
     }
 }
